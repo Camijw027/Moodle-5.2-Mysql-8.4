@@ -1,0 +1,8 @@
+moodledata
+*.sql
+*.mbz
+*.bak
+*.tmp
+*.log
+.env
+.git
