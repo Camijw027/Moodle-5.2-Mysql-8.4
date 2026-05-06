@@ -41,3 +41,4 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/moodle.tgz /tmp/moodle-extract /usr/src/moodle/.git
 
 COPY docker/apache-moodle.conf /etc/apache2/sites-available/000-default.conf
+COPY docker/php.ini /usr/local/etc/php/conf.d/moodle.ini
