@@ -1,4 +1,19 @@
 services:
+  moodle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: moodle52-web
+    depends_on:
+      - mysql
+    ports:
+      - "8080:80"
+    volumes:
+      - ./moodledata:/var/www/moodledata
+    environment:
+      TZ: America/Bogota
+    restart: unless-stopped
+
   mysql:
     image: mysql:8.4
     container_name: moodle52-mysql
