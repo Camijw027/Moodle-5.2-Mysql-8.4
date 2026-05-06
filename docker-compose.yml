@@ -5,7 +5,8 @@ services:
       dockerfile: Dockerfile
     container_name: moodle52-web
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     ports:
       - "8080:80"
     volumes:
@@ -29,6 +30,12 @@ services:
       TZ: America/Bogota
     volumes:
       - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$${MYSQL_ROOT_PASSWORD} --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
     restart: unless-stopped
 
 volumes:
