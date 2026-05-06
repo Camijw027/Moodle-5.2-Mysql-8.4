@@ -42,3 +42,8 @@ RUN apt-get update \
 
 COPY docker/apache-moodle.conf /etc/apache2/sites-available/000-default.conf
 COPY docker/php.ini /usr/local/etc/php/conf.d/moodle.ini
+COPY docker/docker-entrypoint-moodle.sh /usr/local/bin/docker-entrypoint-moodle
+
+RUN chmod +x /usr/local/bin/docker-entrypoint-moodle
+
+ENTRYPOINT ["docker-entrypoint-moodle"]
