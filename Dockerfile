@@ -29,5 +29,13 @@ RUN apt-get update \
         xsl \
         zip \
     && a2enmod rewrite headers expires \
+    && mkdir -p /usr/src/moodle /tmp/moodle-extract \
+    && curl -fsSL --retry 5 --retry-delay 3 "${MOODLE_DOWNLOAD_URL}" -o /tmp/moodle.tgz \
+    && tar -xzf /tmp/moodle.tgz -C /tmp/moodle-extract \
+    && if [ -d /tmp/moodle-extract/moodle ]; then src=/tmp/moodle-extract/moodle; else src=/tmp/moodle-extract; fi \
+    && cp -a "${src}"/. /usr/src/moodle/ \
+    && find /var/www/html -mindepth 1 -maxdepth 1 -exec rm -rf {} + \
+    && cp -a /usr/src/moodle/. /var/www/html/ \
+    && chown -R www-data:www-data /var/www/html \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* /tmp/moodle.tgz /tmp/moodle-extract /usr/src/moodle/.git
