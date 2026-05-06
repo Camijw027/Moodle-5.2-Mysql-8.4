@@ -58,3 +58,35 @@ docker compose down -v
 ```
 
 Usa `docker compose down -v` solo si quieres reiniciar la instalacion desde cero, porque borra la base de datos guardada en el volumen `mysql_data`.
+
+## Verificacion
+
+Validar la configuracion de Compose:
+
+```powershell
+docker compose config
+```
+
+Revisar contenedores:
+
+```powershell
+docker compose ps
+```
+
+Verificar PHP:
+
+```powershell
+docker compose exec moodle php -v
+```
+
+Verificar MySQL:
+
+```powershell
+docker compose exec mysql mysql --version
+```
+
+Probar respuesta HTTP:
+
+```powershell
+curl http://localhost:8080
+```
