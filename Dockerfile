@@ -39,3 +39,5 @@ RUN apt-get update \
     && chown -R www-data:www-data /var/www/html \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/moodle.tgz /tmp/moodle-extract /usr/src/moodle/.git
+
+COPY docker/apache-moodle.conf /etc/apache2/sites-available/000-default.conf
