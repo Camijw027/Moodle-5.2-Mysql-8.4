@@ -10,6 +10,12 @@ services:
     ports:
       - "8080:80"
     volumes:
+      - ./moodle-src/config.php:/var/www/html/config.php
+      - ./moodle-src/public/mod/hvp:/var/www/html/public/mod/hvp
+      - ./moodle-src/public/question/format/h5p:/var/www/html/public/question/format/h5p
+      - ./moodle-src/public/course/format/remuiformat:/var/www/html/public/course/format/remuiformat
+      - ./moodle-src/public/theme/moove:/var/www/html/public/theme/moove
+      - ./moodle-src/public/local/hvactools:/var/www/html/public/local/hvactools
       - ./moodledata:/var/www/moodledata
     environment:
       TZ: America/Bogota

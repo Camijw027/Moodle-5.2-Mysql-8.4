@@ -1,0 +1,218 @@
+.hvactools {
+    max-width: 1180px;
+    margin: 0 auto 2rem;
+}
+
+.hvactools-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid #c8d6d4;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f4fbf9 0%, #ffffff 58%, #25045e 100%);
+}
+
+.hvactools-kicker {
+    margin: 0 0 0.35rem;
+    color: #0f766e;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hvactools h2 {
+    margin: 0;
+    color: #214317;
+    font-size: 2rem;
+}
+
+.hvactools-intro {
+    max-width: 42rem;
+    margin: 0.65rem 0 0;
+    color: #40565a;
+}
+
+.hvactools-badge {
+    display: grid;
+    width: 5rem;
+    height: 5rem;
+    place-items: center;
+    border: 2px solid #0f766e;
+    border-radius: 8px;
+    color: #0f766e;
+    font-weight: 800;
+}
+
+.hvactools-badge-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.35rem;
+}
+
+.hvactools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.hvactools-panel {
+    padding: 1rem;
+    border: 1px solid #d8e2e0;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(23, 60, 67, 0.20);
+}
+
+.hvactools-panel h3 {
+    margin: 0 0 0.6rem;
+    color: #1d515b;
+    font-size: 1.1rem;
+}
+
+.hvactools-panel p {
+    color: #576f74;
+}
+
+.hvactools-wide {
+    grid-column: span 2;
+}
+
+.hvactools-formrow {
+    margin-top: 0.85rem;
+}
+
+.hvactools-formrow label {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #294c52;
+    font-weight: 700;
+}
+
+.hvactools-formrow input,
+.hvactools-formrow select {
+    width: 70%;
+    max-width: 18rem;
+    min-height: 2.35rem;
+    border: 1px solid #bacac7;
+    border-radius: 6px;
+    padding: 0.4rem 0.55rem;
+}
+
+.hvactools-result {
+    margin: 1rem 0 0;
+    padding: 0.85rem;
+    border-radius: 6px;
+    background: #4e0e6df4;
+    color: #ffffff !important;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.hvactools-checklist {
+    display: grid;
+    gap: 0.65rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+.hvactools-checklist label {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    color: #314f54;
+}
+
+.hvactools-diagnostics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.hvactools-diagnostics div {
+    padding: 0.85rem;
+    border-left: 4px solid #0f766e;
+    border-radius: 6px;
+    background: #ebf1ef;
+}
+
+.hvactools-diagnostics strong,
+.hvactools-diagnostics span {
+    display: block;
+}
+
+.hvactools-diagnostics strong {
+    margin-bottom: 0.3rem;
+    color: #173c43;
+}
+
+.hvactools-diagnostics span {
+    color: #4d6266;
+}
+
+.hvactools-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+}
+
+.hvactools-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.85rem 0.5rem;
+    border: 1px solid #d8e2e0;
+    border-radius: 8px;
+    background: #f8fcfb;
+    color: #173c43;
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+.hvactools-links a:hover,
+.hvactools-links a:focus {
+    border-color: #0f766e;
+    background: #eef8f6;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
+    transform: translateY(-2px);
+    color: #0f766e;
+}
+
+.hvactools-brand-logo {
+    width: 72px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+
+    .hvactools-grid,
+    .hvactools-diagnostics {
+        grid-template-columns: 1fr;
+    }
+
+    .hvactools-wide {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .hvactools-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hvactools-badge {
+        width: 4rem;
+        height: 4rem;
+    }
+}
